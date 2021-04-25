@@ -12,20 +12,6 @@ const { MongoClient } = require('mongodb');
 var app = express();
 
 
-
-// const uri = "mongodb+srv://dbUser:Tm1OxXX9e1ZQKXug@cluster0.3qj65.mongodb.net/nyhetsbrev.prenumeranter?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-// client.connect(err => {
-//   const collection = client.db("nyhetsbrev").collection("prenumeranter");
-
-//   // perform actions on the collection object
-//   client.close();
-// });
-
-
-
-// const MongoClient = require("mongodb").MongoClient;
-
 MongoClient.connect("mongodb+srv://tove:trav@cluster0.3qj65.mongodb.net/nyhetsbrev.prenumeranter?retryWrites=true&w=majority", {
   useUnifiedTopology: true
 })
@@ -36,21 +22,6 @@ MongoClient.connect("mongodb+srv://tove:trav@cluster0.3qj65.mongodb.net/nyhetsbr
   app.locals.db = db;
 })
 
-
-
-
-
-// const MongoClient = require("mongodb").MongoClient;
-
-// MongoClient.connect("mongodb://127.0.0.1:27017", {
-//   useUnifiedTopology: true
-// })
-// .then(client => {
-//   console.log("Vi är uppkopplade mot databasen");
-
-//   const db = client.db("usersbook");
-//   app.locals.db = db;
-// })
 
 app.use(logger('dev'));
 app.use(express.json());
